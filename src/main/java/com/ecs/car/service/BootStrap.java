@@ -26,22 +26,27 @@ public class BootStrap {
 
     public void insertMake()
     {
+        log.info("ENTER METHOD insertMake");
         makeRepository.save(new Make("bmw"));
         makeRepository.save(new Make("mercedes"));
         makeRepository.save(new Make("toyota"));
         makeRepository.save(new Make("mazda"));
         makeRepository.save(new Make("audi"));
+        log.info("EXIT METHOD insertMake");
     }
     public void insertModel()
     {
+        log.info("ENTER METHOD insertModel");
         modelRepository.save(new Model("suv"));
         modelRepository.save(new Model("hatchback"));
         modelRepository.save(new Model("sports"));
         modelRepository.save(new Model("estate"));
+        log.info("EXIT METHOD insertModel");
     }
 
     public void insertCar()
     {
+        log.info("ENTER METHOD insertCar");
         String size=null;
         List<Car> list= carRepository.findAll();
         if(list.size()>0) {
@@ -54,5 +59,6 @@ public class BootStrap {
             carRepository.save(new Car(new Make("toyota"),new Model("estate"),"Black",Year.now().minusYears(4).toString()));
             carRepository.save(new Car(new Make("toyota"),new Model("suv"),"Yellow",Year.now().toString()));
         });
+        log.info("Exit METHOD insertCar");
     }
 }

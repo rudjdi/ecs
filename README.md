@@ -2,7 +2,7 @@
 
 # How to Run:
 -- Need to have java 11 installed(JAVA_HOME environment variable should point to java installation directory)
-1. Go to project root directory "/car"
+1. Go to project root directory "/ecs"
 2. Open terminal then type ./gradlew clean (for windows -> gradlew clean)
 3. Then ./gradlew build (for windows -> gradlew build)
 4. Finally ./gradlew bootRun (for windows -> gradlew bootRun)
@@ -11,7 +11,7 @@ By default it runs with embabded h2 databse but you can change it mysql profile 
 
 Application runs on port 8087. Application inserts some data into database at start up
 
-**Please find attached post collection and environment inside postman_collection folder "/car/postman_collection". 
+**Please find attached postman collection and environment inside postman_collection folder "/ecs/postman_collection". 
 Import them(collection and environment) in postman to run some http PUT,POST,DELETE request**
 
 ## Urls:
