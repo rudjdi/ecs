@@ -13,6 +13,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -26,8 +28,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CarApplicationTests {
-	@Autowired
-	CarRepository carRepository;
+private Logger logger= LoggerFactory.getLogger(CarApplicationTests.class);
 	@Autowired
 	MakeRepository makeRepository;
 	@Autowired
@@ -40,7 +41,8 @@ class CarApplicationTests {
 	}
 
 	@Before
-	void perform_A_findFromDb() throws URISyntaxException {
+	void removeFirstIfExist() throws URISyntaxException {
+		logger.info("-------------RUNNING BEFORE-------------------------------");
 		Optional<Make> make=makeRepository.findById("testmake");
 		make.ifPresent(make1 -> makeRepository.delete(make1));
 
@@ -50,6 +52,7 @@ class CarApplicationTests {
 
 	@Test
 	void test_C_insertMake() throws URISyntaxException {
+		logger.info("-------------RUNNING test_C_insertMake-------------------------------");
 		Make make=new Make("testmake");
 		ResponseEntity<String> response=testRestTemplate.postForEntity("/make",make, String.class);
 		Assert.assertThat(response.getBody(), CoreMatchers.containsString("testmake"));
@@ -57,14 +60,19 @@ class CarApplicationTests {
 
 	@Test
 	void test_D_insertModel() throws URISyntaxException {
+		logger.info("-------------RUNNING test_D_insertModel-------------------------------");
 		Model model=new Model("testmodel");
 		ResponseEntity<String> response=testRestTemplate.postForEntity("/model",model, String.class);
 		Assert.assertThat(response.getBody(), CoreMatchers.containsString("testmodel"));
 	}
 
 	@After
-	void test_A_findFromDb() throws URISyntaxException {
-		testRestTemplate.delete("/make/testmake");
-		testRestTemplate.delete("/model/testmodel");
+	void remoFromDb() throws URISyntaxException {
+		logger.info("-------------RUNNING AFTER-------------------------------");
+		Optional<Make> make=makeRepository.findById("testmake");
+		make.ifPresent(make1 -> makeRepository.delete(make1));
+
+		Optional<Model> model=modelRepository.findById("testmodel");
+		model.ifPresent(model1 -> modelRepository.delete(model1));
 	}
 }
