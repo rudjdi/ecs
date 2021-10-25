@@ -11,14 +11,15 @@ import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
+import org.springframework.test.context.event.annotation.AfterTestExecution;
+import org.springframework.test.context.event.annotation.BeforeTestExecution;
 
 import java.net.URISyntaxException;
 import java.time.Year;
@@ -40,7 +41,7 @@ private Logger logger= LoggerFactory.getLogger(CarApplicationTests.class);
 	void contextLoads() {
 	}
 
-	@Before
+	@BeforeEach
 	void removeFirstIfExist() throws URISyntaxException {
 		logger.info("-------------RUNNING BEFORE-------------------------------");
 		Optional<Make> make=makeRepository.findById("testmake");
@@ -66,7 +67,7 @@ private Logger logger= LoggerFactory.getLogger(CarApplicationTests.class);
 		Assert.assertThat(response.getBody(), CoreMatchers.containsString("testmodel"));
 	}
 
-	@After
+	@AfterEach
 	void remoFromDb() throws URISyntaxException {
 		logger.info("-------------RUNNING AFTER-------------------------------");
 		Optional<Make> make=makeRepository.findById("testmake");
