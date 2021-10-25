@@ -14,6 +14,8 @@ Application runs on port 8087. Application inserts some data into database at st
 **Please find attached postman collection and environment inside postman_collection folder "/ecs/postman_collection". 
 Import them(collection and environment) in postman to run some http PUT,POST,DELETE request**
 
+Log output to console and file both using spring logback, log file will be stored in logs folder inside project directory. 
+
 ## Urls:
 
 http://localhost:8087/
