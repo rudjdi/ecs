@@ -11,8 +11,8 @@ By default it runs with embabded h2 databse but you can change it mysql profile 
 
 Application runs on port 8087. Application inserts some data into database at start up
 
-Please find attached post collection and environment inside postman_collection folder "**/car/postman_collection"
-Import them(collection and environment) in postman to run some http PUT,POST,DELETE request
+**Please find attached post collection and environment inside postman_collection folder "/car/postman_collection". 
+Import them(collection and environment) in postman to run some http PUT,POST,DELETE request**
 
 ## Urls:
 
@@ -27,3 +27,7 @@ All model: http://localhost:8087/model
 All car with audi make: http://localhost:8087/make/audi/car_list
 
 All car with suv model: http://localhost:8087/model/suv/car_list
+
+
+Contact:
+Rana Ghosh - rudj.di@gmail.com
