@@ -18,6 +18,7 @@ Log output to console and file both using spring logback, log file will be store
 
 ## Urls:
 
+**Cred for POST,DELETE,PUT : user:ecs, pwd:ecs ** //already set in postman collection
 http://localhost:8087/
 
 All Car: http://localhost:8087/car
@@ -29,7 +30,10 @@ All model: http://localhost:8087/model
 All car with audi make: http://localhost:8087/make/audi/car_list
 
 All car with suv model: http://localhost:8087/model/suv/car_list
+Car by color: http://localhost:8087/car/search/findByColor?color=green
+Car by year: http://localhost:8087/car/search/findByYear?year=2021
 
 
-Contact:
+
+## Contact:
 Rana Ghosh - rudj.di@gmail.com

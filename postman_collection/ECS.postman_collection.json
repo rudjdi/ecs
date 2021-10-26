@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "79ef77b0-4263-47d3-b482-3d0941f1180a",
+		"_postman_id": "5fa66d09-8b56-460d-9ed4-e8a5e5bcada5",
 		"name": "ECS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -20,6 +20,21 @@
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ecs",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ecs",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -64,6 +79,21 @@
 		{
 			"name": "UPDATE CAR",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ecs",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ecs",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -88,6 +118,21 @@
 		{
 			"name": "REMOVE CAR",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ecs",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ecs",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {

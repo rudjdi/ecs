@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.hibernate.annotations.Columns;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -23,6 +24,7 @@ public class Car {
 
     @NotNull(message = "make should not be empty")
     @ManyToOne
+
     @JoinColumn(name = "make", referencedColumnName = "name")
     private Make make;
 
@@ -38,7 +40,6 @@ public class Car {
     @Column
     @NumericOnly(message = "Year should be numeric only")
     private String year;
-
 
     public Car(Make make, Model model, String color, String year) {
         this.make = make;
