@@ -30,7 +30,9 @@ All model: http://localhost:8087/model
 All car with audi make: http://localhost:8087/make/audi/car_list
 
 All car with suv model: http://localhost:8087/model/suv/car_list
+
 Car by color: http://localhost:8087/car/search/findByColor?color=green
+
 Car by year: http://localhost:8087/car/search/findByYear?year=2021
 
 
