@@ -12,10 +12,10 @@ pipeline {
                 sh './gradlew build -x test'
                 sh './gradlew test'
             }
+        }
         stage('Test') {
             steps {
                 echo 'Running test cases now'
-                sh 'chmod +x ./gradlew'
                 sh './gradlew test'
             }
         }
