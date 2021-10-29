@@ -7,6 +7,7 @@ pipeline {
                 echo 'building now'
                 withGradle()
                 {
+                    sh 'chmod +x ./gradlew'
                     sh './gradlew clean'
                     sh './gradlew build'
                 }
