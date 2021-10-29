@@ -10,7 +10,6 @@ pipeline {
                 sh 'chmod +x ./gradlew'
                 sh './gradlew clean'
                 sh './gradlew build -x test'
-                sh './gradlew test'
             }
         }
         stage('Test') {
