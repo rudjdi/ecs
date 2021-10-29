@@ -4,12 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                gradlew clean build
+                ./gradlew clean
+                ./gradlew build
             }
         }
         stage('Test') {
             steps {
-                gradle test --tests CarApplicationTests
+                ./gradlew test --tests CarApplicationTests
             }
         }
         stage('Deploy') {
