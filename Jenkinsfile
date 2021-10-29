@@ -4,18 +4,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                ./gradlew clean
-                ./gradlew build
-            }
-        }
-        stage('Test') {
-            steps {
-                ./gradlew test --tests CarApplicationTests
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                echo 'building now'
+                withGradle()
+                {
+                    sh '.gradlew clean'
+                    sh '.gradlew build'
+                }
             }
         }
     }
