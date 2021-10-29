@@ -7,8 +7,8 @@ pipeline {
                 echo 'building now'
                 withGradle()
                 {
-                    sh '.gradlew clean'
-                    sh '.gradlew build'
+                    sh './gradlew clean'
+                    sh './gradlew build'
                 }
             }
         }
