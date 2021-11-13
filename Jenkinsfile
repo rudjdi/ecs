@@ -18,11 +18,5 @@ pipeline {
                 sh './gradlew test'
             }
         }
-        stage('push') {
-                    steps {
-                        echo 'Running test cases now'
-                        sh './gradlew test'
-                    }
-                }
     }
 }
